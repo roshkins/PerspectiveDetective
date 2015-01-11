@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path=""/>
+	<classpathentry excluding="com/rashirashi/InitBit.java" kind="src" path=""/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry kind="lib" path="C:/Users/Rashi/Leap_Motion_SDK_Windows_2.2.1/LeapDeveloperKit_2.2.1+24116_win/LeapSDK/lib/LeapJava.jar">
 		<attributes>
