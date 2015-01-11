@@ -61,7 +61,7 @@ public class ImageRender extends Canvas implements Runnable
 	{
 		Dimension size = new Dimension(WIDTH, HEIGHT);
 		setPreferredSize(size);
-		image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
+		image = new BufferedImage(WIDTH/2, HEIGHT/2, BufferedImage.TYPE_INT_RGB);
 		pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
 		
 		//Leap Image Constructor
@@ -78,9 +78,10 @@ public class ImageRender extends Canvas implements Runnable
 		Controller controller = new Controller();
 		controller.setPolicy(Controller.PolicyFlag.POLICY_IMAGES);
 		
+		 int[] doubledBufferPixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
+		
 		while (running)
 		{
-			draw();
 			
 			 Frame frame = controller.frame();
 			 if(frame.isValid()){
@@ -100,13 +101,15 @@ public class ImageRender extends Canvas implements Runnable
 			      int r = (imageData[i] & 0xFF) << 16; //convert to unsigned and shift into place
 			       int g = (imageData[i] & 0xFF) << 8;
 			      int  b = imageData[i] & 0xFF;
-			       pixels[i] =  r | g | b; 
+			       doubledBufferPixels[i] =  r | g | b; 
 			     }
 			     
 			     //Show the image
 			//     camera.updatePixels();
 			//     image(camera, 640 * image.id(), 0);  
 			   }
+			   pixels = doubledBufferPixels;
+			   draw();
 			 }
 			
 //			for (int x = 0; x < WIDTH * HEIGHT; x++)
