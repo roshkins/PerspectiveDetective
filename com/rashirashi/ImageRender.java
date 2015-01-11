@@ -136,8 +136,8 @@ public class ImageRender extends Canvas implements Runnable
 			     
 			     byte[] imageData = image.data();
 			     
-			     BufferedImage imageB = new BufferedImage(WIDTH, HEIGHT/3, BufferedImage.TYPE_INT_RGB);
-				 BufferedImage imageC = new BufferedImage(WIDTH, HEIGHT/3, BufferedImage.TYPE_INT_RGB);
+			     BufferedImage imageB = new BufferedImage(WIDTH/2, HEIGHT/3, BufferedImage.TYPE_INT_RGB);
+				 BufferedImage imageC = new BufferedImage(WIDTH/2, HEIGHT/3, BufferedImage.TYPE_INT_RGB);
 				 
 				 int[] imageBPixels = ((DataBufferInt) imageB.getRaster().getDataBuffer()).getData();
 				 int[] imageCPixels = ((DataBufferInt) imageC.getRaster().getDataBuffer()).getData();
