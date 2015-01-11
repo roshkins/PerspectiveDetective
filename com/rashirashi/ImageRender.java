@@ -24,7 +24,7 @@ public class ImageRender extends Canvas implements Runnable
 
 	private static final long	serialVersionUID	= 1L;
 
-	public static final int		WIDTH				= 1280, HEIGHT = 720;
+	public static final int		WIDTH				= 640, HEIGHT = 720;
 
 	public int					low, high;
 
@@ -61,7 +61,7 @@ public class ImageRender extends Canvas implements Runnable
 	{
 		Dimension size = new Dimension(WIDTH, HEIGHT);
 		setPreferredSize(size);
-		image = new BufferedImage(WIDTH/2, HEIGHT/2, BufferedImage.TYPE_INT_RGB);
+		image = new BufferedImage(WIDTH, HEIGHT/3, BufferedImage.TYPE_INT_RGB);
 		pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
 		
 		//Leap Image Constructor
